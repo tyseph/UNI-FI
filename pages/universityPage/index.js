@@ -17,32 +17,7 @@ const UniversityPage = () => {
 					</p>
 				</div>
 				<div className="w-1/2 p-10">
-					<div className="flex pt-48">
-						<p
-							style={{ fontSize: "24px" }}
-							className="uppercase font-semibold pl-10 text-gray-700"
-						>
-							Other info
-						</p>
-						<p
-							style={{ fontSize: "24px" }}
-							className="uppercase font-semibold pl-10 text-gray-700"
-						>
-							Other info
-						</p>
-						<p
-							style={{ fontSize: "24px" }}
-							className="uppercase font-semibold pl-10 text-gray-700"
-						>
-							Other info
-						</p>
-						<p
-							style={{ fontSize: "24px" }}
-							className="uppercase font-semibold pl-10 text-gray-700"
-						>
-							Other info
-						</p>
-					</div>
+					
 				</div>
 			</div>
 			<hr

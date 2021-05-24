@@ -53,10 +53,12 @@ const Names = () => {
 					<div className="p-10">
 						{flag != 1 ? (
 							<div
-								className="bg-green-500 rounded p-2"
-								style={{ position: "relative", left: "1" }}
+								className="bg-gray-500 p-2 rounded"
+								style={{ position: "relative", float: "left", width: "50%" }}
 							>
-								<p className="text-lg font-normal">message</p>
+								<p className="text-lg font-normal">
+									message is being written here somehow
+								</p>
 								<p
 									className="text-right font-thin"
 									style={{ fontSize: "10px" }}
@@ -67,7 +69,7 @@ const Names = () => {
 						) : (
 							<div
 								className="bg-gray-500 p-2 rounded"
-								style={{ position: "relative", right: "1" }}
+								style={{ float: "right", width: "50%" }}
 							>
 								<p className="text-lg font-normal">
 									message is being written here somehow
@@ -83,10 +85,12 @@ const Names = () => {
 
 						{flag == 1 ? (
 							<div
-								className="bg-green-500 rounded p-2"
-								style={{ position: "relative", left: "1" }}
+								className="bg-gray-500 p-2 rounded"
+								style={{ float: "left", width: "50%" }}
 							>
-								<p className="text-lg font-normal">message</p>
+								<p className="text-lg font-normal">
+									message is being written here somehow
+								</p>
 								<p
 									className="text-right font-thin"
 									style={{ fontSize: "10px" }}
@@ -97,7 +101,7 @@ const Names = () => {
 						) : (
 							<div
 								className="bg-gray-500 p-2 rounded"
-								style={{ position: "relative", right: "1" }}
+								style={{ float: "right", width: "50%" }}
 							>
 								<p className="text-lg font-normal">
 									message is being written here somehow
