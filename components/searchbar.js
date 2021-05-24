@@ -12,7 +12,7 @@ const Searchbar = () => {
 	};
 	return (
 		<div
-			style={{ position: "absolute", width: "50%", left: "24.5%", top: "50%" }}
+			style={{ width: "100%", left: "24.5%", top: "50%" }}
 		>
 			<div
 				className="focus:outline-none hover:scale-110"

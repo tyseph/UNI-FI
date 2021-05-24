@@ -22,6 +22,9 @@ export default function Home() {
 						>
 							Uni-Fi
 						</h1>
+						<div style={{ margin: "auto", width: "50%" }}>
+							<Searchbar />
+						</div>
 						<p
 							style={{ fontSize: "80px" }}
 							className="tracking-widest font-bold text-gray-200 text-center uppercase"
@@ -30,9 +33,6 @@ export default function Home() {
 						</p>
 					</div>
 				</div>
-			</div>
-			<div className="">
-				<Searchbar />
 			</div>
 		</div>
 	);
