@@ -5,6 +5,7 @@ const Names = () => {
 	const [open, setOpen] = useState(false);
 	const [text, setText] = useState("");
 	const [userArray, setUserArray] = useState([]);
+	const flag = 1;
 
 	return (
 		<div>
@@ -48,6 +49,69 @@ const Names = () => {
 						<img src="https://picsum.photos/50" className="ml-5 rounded-full" />
 						<p className="text-2xl text-medium text-gray-800 p-1 pl-4">Name</p>
 					</div>
+
+					<div className="p-10">
+						{flag != 1 ? (
+							<div
+								className="bg-green-500 rounded p-2"
+								style={{ position: "relative", left: "1" }}
+							>
+								<p className="text-lg font-normal">message</p>
+								<p
+									className="text-right font-thin"
+									style={{ fontSize: "10px" }}
+								>
+									Time
+								</p>
+							</div>
+						) : (
+							<div
+								className="bg-gray-500 p-2 rounded"
+								style={{ position: "relative", right: "1" }}
+							>
+								<p className="text-lg font-normal">
+									message is being written here somehow
+								</p>
+								<p
+									className="text-right font-thin"
+									style={{ fontSize: "10px" }}
+								>
+									Time
+								</p>
+							</div>
+						)}
+
+						{flag == 1 ? (
+							<div
+								className="bg-green-500 rounded p-2"
+								style={{ position: "relative", left: "1" }}
+							>
+								<p className="text-lg font-normal">message</p>
+								<p
+									className="text-right font-thin"
+									style={{ fontSize: "10px" }}
+								>
+									Time
+								</p>
+							</div>
+						) : (
+							<div
+								className="bg-gray-500 p-2 rounded"
+								style={{ position: "relative", right: "1" }}
+							>
+								<p className="text-lg font-normal">
+									message is being written here somehow
+								</p>
+								<p
+									className="text-right font-thin"
+									style={{ fontSize: "10px" }}
+								>
+									Time
+								</p>
+							</div>
+						)}
+					</div>
+
 					<div
 						className="flex border-t-2 border-gray-300 rounded p-1 bg-gray-200"
 						style={{

@@ -1,8 +1,17 @@
 import Link from "next/link";
 import { useState } from "react";
+import app from "../../firebase/firebase";
 
-const Login = ({ clicked }) => {
+const Login = () => {
 	const [logged, setLogged] = useState(false);
+	const [email, setEmail] = useState("");
+	const [pswd, setPswd] = useState("");
+
+	const login = async () => {
+		await app.auth().signInWithEmailAndPassword(email, pswd);
+		console.log("Signed up user");
+		Router.push("/");
+	};
 
 	return (
 		<div
@@ -19,6 +28,7 @@ const Login = ({ clicked }) => {
 					<div className="p-2">
 						<label className="text-gray-500 ml-1 text-2xl">Email</label>
 						<input
+							onChange={(e) => setEmail(e.target.value)}
 							style={{ outline: "none", width: "100%" }}
 							className="tracking-wider text-gray-600 text-lg px-2 outline-none bg-transparent border-b-2 border-gray-500"
 							type="email"
@@ -28,6 +38,7 @@ const Login = ({ clicked }) => {
 					<div className="p-2">
 						<label className="text-gray-500 ml-1 text-2xl">Password</label>
 						<input
+							onChange={(e) => setPswd(e.target.value)}
 							style={{ outline: "none", width: "100%" }}
 							className="tracking-wider text-gray-600 text-lg px-2 outline-none bg-transparent border-b-2 border-gray-500"
 							type="password"
@@ -41,7 +52,7 @@ const Login = ({ clicked }) => {
 				>
 					<Link href="/dashboard">
 						<button
-							onClick={clicked(logged)}
+							onClick={login}
 							className="text-center font-semibold text-2xl text-white tracking-wider focus:outline-none"
 						>
 							Login

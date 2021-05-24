@@ -1,14 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import app from "../../firebase/firebase";
 
 const UserProfile = () => {
 	const [state, setState] = useState({
 		name: "Sajal",
-		fullname: "Sajal Ganjewala",
+		fullname: "",
 		email: "sajal@example.com",
 		phnumber: "9900990099",
 		location: "India",
 		postalcode: "202202",
 	});
+
+	useEffect(() => {
+		app.auth().onAuthStateChanged(function (user) {
+			if (user) {
+				var username = user.email.split("@");
+				setState({
+					fullname: username[0],
+					email: user.email,
+				});
+			}
+		});
+	}, []);
+
 	return (
 		<div className="p-10">
 			<div className="p-10">
@@ -19,7 +33,7 @@ const UserProfile = () => {
 						flexDirection: "column",
 					}}
 				>
-					<div style={{marginLeft: '43%'}}>
+					<div style={{ marginLeft: "43%" }}>
 						<img src="https://picsum.photos/250" className="rounded-full" />
 					</div>
 					<div className="pl-10">

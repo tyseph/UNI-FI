@@ -1,8 +1,13 @@
 import Link from "next/link";
 import { useState } from "react";
+import app from '../../firebase/firebase';
 
 const Profilebox = ({ clicked }) => {
 	const [loggedin, setLoggedin] = useState(true);
+
+	const logOut = () => {
+		app.auth().signOut()
+	}
 	return (
 		<div
 			style={{ position: "absolute", top: "100%", right: "1%", width: "300px" }}
@@ -31,9 +36,7 @@ const Profilebox = ({ clicked }) => {
 						</div>
 					</Link>
 					<div
-						onClick={() => {
-							clicked(loggedin);
-						}}
+						onClick={logOut}
 						className="items-center bg-red-500 hover:bg-green-500 px-4 py-2 m-4 transition transform duration-200 hover:-translate-x-4"
 					>
 						<button className="font-semibold text-2xl text-gray-700 tracking-widest uppercase focus:outline-none">

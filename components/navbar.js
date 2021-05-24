@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Login from "./forms/login";
 import Register from "./forms/register";
 import Profilebox from "./navBarcomponents/profileBox";
+import app from "../firebase/firebase";
 
 function navBar() {
 	const [loggedin, setLoggedin] = useState(false);
@@ -11,6 +12,16 @@ function navBar() {
 	const [state, setState] = useState({ login: false, register: false });
 
 	loggedin ? ((state.login = false), (state.register = false)) : null;
+
+	useEffect(() => {
+		app.auth().onAuthStateChanged(function (user) {
+			if (user) {
+				setLoggedin(true);
+			} else {
+				setLoggedin(false);
+			}
+		});
+	}, []);
 
 	return (
 		<nav className="nav absolute z-40 shadow-lg" style={{ width: "100vw" }}>
@@ -70,9 +81,7 @@ function navBar() {
 						</div>
 					</div>
 				)}
-				{state.login ? (
-					<Login clicked={(logged) => setLoggedin(!logged)} />
-				) : null}
+				{state.login ? <Login /> : null}
 				{state.register ? <Register /> : null}
 			</div>
 		</nav>
